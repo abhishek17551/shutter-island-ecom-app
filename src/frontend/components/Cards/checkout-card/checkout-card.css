@@ -1,0 +1,11 @@
+.horizontal-card {
+    width: 40rem;
+}
+
+.cart-item-image {
+    width: 23rem;
+}
+
+.horizontal-card-btns {
+    grid-template-columns: 1fr 1fr;
+}

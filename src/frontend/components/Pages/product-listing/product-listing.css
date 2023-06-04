@@ -1,0 +1,37 @@
+.sidebar{
+    width: 100%;
+    position: sticky;
+}
+
+.full-wrapper{
+    width: 100%;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.page-wrapper {
+    width: 75%;
+    overflow-y: auto;
+}
+
+.slider{
+    width: 10.5rem;
+}
+/* product cards styles */
+.card{
+    height: 23.5rem;
+}
+
+.primary{
+    height: 8rem;
+}
+
+.card-description .far{
+    color: var(--dark-red);
+}
+
+.checkbox-input{
+    height: 20rem;
+}
