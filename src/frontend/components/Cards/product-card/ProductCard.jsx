@@ -26,7 +26,7 @@ export const ProductCard = ({ product }) => {
         <img src={image} alt={title} className="responsive-image" />
         <div className="card-description flex-sb-column mg-t-s">
           <div className="primary flex-column">
-            <h4>{title}</h4>
+          <p class="m-text">{title}</p>
             <div className="price m-text">
               <h6><strong>Rs {discountedprice}</strong></h6>
               <h6 className="light strikethrough">Rs {price}</h6>

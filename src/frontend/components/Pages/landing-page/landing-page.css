@@ -26,14 +26,14 @@
 
 /* overlay card styles */
 .overlay-card{
-    width: 13rem;
-    height: 13rem;
+    width: 17rem;
+    height: 18rem;
     border: .5px solid var(--primary-color-light); ;
 }
 
 .overlay-text{
-    top:28.5%;
-    left: 18.75%;
+    top:32.5%;
+    left: 25%;
     color: var(--primary-text-color);
 }
 
