@@ -9,11 +9,13 @@ import { ProductListing } from "./frontend/components/Pages/product-listing/Prod
 import { Cart } from "./frontend/components/Pages/cart-page/Cart";
 import { Wishlist } from "./frontend/components/Pages/wishlist-page/Wishlist";
 import { Checkout } from "./frontend/components/Pages/checkout-page/Checkout";
+import { ProductDetail } from "./frontend/components/Pages/product-details/ProductDetail";
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path='/' element={<LandingPage/>} />
+        <Route path="/products/:productId" element={<ProductDetail/>}/>
         <Route path='/products' element={<ProductListing/>} />
         <Route path='/mockman' element={<Mockman />} />
         <Route path="/cart" element={<Cart/>}/>

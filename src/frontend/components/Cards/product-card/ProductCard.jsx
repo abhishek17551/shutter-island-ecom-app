@@ -2,12 +2,14 @@ import { useContext, useState } from 'react';
 import './product-card.css'
 import { WishlistContext } from '../../../context/WishlistContext';
 import { CartContext } from '../../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 
 export const ProductCard = ({ product }) => {
-    const {_id, title, categoryName, image, price, discount, discountedprice, rating} = product
+    const {_id, title, categoryName, image, price, discount, discountedprice, rating, noDetail} = product
     const {handleWishlistAddition} = useContext(WishlistContext)
     const {handleCartAddition} = useContext(CartContext)
+
 
     const [wishlistAdded, setWishlistAdded] = useState(false);
     const [cartAdded, setCartAdded] = useState(false);
@@ -32,7 +34,7 @@ export const ProductCard = ({ product }) => {
               <h6 className="light strikethrough">Rs {price}</h6>
               <h6 className="discount">({discount}% Off)</h6>
             </div>
-            <button class="btn secondary-btn mg-xxs">View Details</button>
+            <button class="btn secondary-btn mg-xxs"><Link to={`/products/${_id}`}>View Details</Link></button>
             <button className="btn primary-btn mg-xxs" onClick={handleWishlistAdditionClick} disabled={wishlistAdded}>{wishlistAdded ? "Added to Wishlist" : "Add to Wishlist"}</button>
             <button className="btn primary-btn mg-xxs" onClick={handleCartAdditionCLick} disabled={cartAdded} >{cartAdded ? "Added to Cart" : "Add to Cart"}</button>
           </div>
