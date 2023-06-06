@@ -4,5 +4,6 @@
 
 .card {
     height: 38.5rem;
-    width: 17rem;
+    width: 17.25rem;
+    background-color: var(--primary-color-lightest);
 }

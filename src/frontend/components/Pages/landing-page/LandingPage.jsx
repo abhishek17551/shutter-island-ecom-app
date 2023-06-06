@@ -1,9 +1,10 @@
 import './landing-page.css'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { landing_image,ecom_logo,signup_icon, login_icon,nikkor_200mm } from "../../../../backend/assets"
 import NavgationTop from "../../navigation/NavigationTop"
 import { landingPageData } from '../../../../backend/db/landing-page-data'
 import { LandingPageBgImage } from '../../navigation/LandingPageBgImage'
+
 
 export const LandingPage = () => {
    
@@ -27,7 +28,7 @@ export const LandingPage = () => {
                                     <div className="flex-center-column mg-r-m">
                                         <h2>{title}</h2>
                                         <p>{description}</p>
-                                        <a href="../products/products-listing-1.html"><button className="btn primary-btn mg-t-xs">{buttonText}</button></a>
+                                        <button className="btn primary-btn mg-t-xs" >{buttonText}</button>
                                     </div>
                                 </div>
                            ) : (
@@ -35,7 +36,7 @@ export const LandingPage = () => {
                                 <div className="flex-center-column mg-l-m">
                                     <h2>{title}</h2>
                                     <p>{description}</p>
-                                    <a href="../products/products-listing-1.html"><button className="btn primary-btn mg-t-xs">{buttonText}</button></a>
+                                    <button className="btn primary-btn mg-t-xs" >{buttonText}</button>
                                 </div>
                                 <div className="overlay-card pointer border-radius-sm flex-se">
                                     <img src={image} alt={title} className="responsive-image"/>

@@ -5,11 +5,15 @@ import { ProductContext } from "../../../context/ProductContext"
 import { FilterSection } from './filterSection'
 import { ProductCard } from '../../Cards/product-card/ProductCard'
 import NavgationTop from '../../navigation/NavigationTop'
+import { useParams } from 'react-router-dom'
 
 
 
 export const ProductListing = () => {
    const {products} = useContext(ProductContext)
+   //const {category} = useParams()
+
+   //const filteredProducts = products.filter((product) => product.categoryName === category)
 
     return (
         <div>
@@ -17,7 +21,7 @@ export const ProductListing = () => {
             <main className="wrapper">
                 <FilterSection/>
                 <div className="page-wrapper">
-                    <h3>Showing All Products</h3>
+                    <h3>Products</h3>
                     <div className="flex-center flex-row-wrap mg-t-s">
                         <div className="flex-center flex-row-wrap mg-t-s mg-s">
                         {products.length > 0 ? (

@@ -3,10 +3,9 @@ import { useContext, useState } from "react";
 import { CheckoutContext } from "../../../context/CheckoutContext";
 import { WishlistContext } from "../../../context/WishlistContext";
 
-export const CheckoutCard = ({product}) => {
+export const CheckoutCard = ({product, onQuantityChange, quantity}) => {
     const {_id, title,brand, categoryName, image, price, discount, discountedprice, rating} = product;
-    const [itemQuantity,setItemQuantity] = useState(1)
-    const {handleCheckoutRemoval} = useContext(CheckoutContext)
+    const { handleCheckoutRemoval} = useContext(CheckoutContext)
     const {handleWishlistAddition} = useContext(WishlistContext)
 
     const handleMoveToWishlist = (item) => {
@@ -14,10 +13,10 @@ export const CheckoutCard = ({product}) => {
         handleCheckoutRemoval(item)
     }
 
-    const handleItemQuantity = (event) => {
-        const quantity = event.target.value;
-        setItemQuantity(quantity)
-    }
+    const handleQuantityChange = (e) => {
+        const newQuantity = parseInt(e.target.value);
+        onQuantityChange(_id, newQuantity);
+      };
 
     const quantityArray = [1,2,3,4,5,6,7]
     return (
@@ -34,18 +33,18 @@ export const CheckoutCard = ({product}) => {
                     </div>
                     <div>
                         <label htmlFor="quantity">Quantity :</label>
-                        <select name="quantity" id="_id" className='mg-l-xs' value={itemQuantity} onChange={handleItemQuantity}>
+                        <select name="quantity" id="_id" className='mg-l-xs' value={quantity} onChange={handleQuantityChange}>
                             {
                                 quantityArray.map((item) => (
-                                    <option value={item}>{item}</option>
+                                    <option value={item} key = {item}>{item}</option>
                                 ))
                             }
                         </select>
                     </div>
                 </div>
                 <div class="cart-item-price">
-                   <h4><strong>Rs {discountedprice * itemQuantity}</strong></h4>
-                    <h4 class="light strikethrough">Rs {price * itemQuantity}</h4>
+                   <h4><strong>Rs {discountedprice * quantity}</strong></h4>
+                    <h4 class="light strikethrough">Rs {price * quantity}</h4>
                     <h4 class="discount">({discount}% Off)</h4>
                 </div>
             </div>

@@ -10,8 +10,6 @@ export const ProductDetail = () => {
     const {products} = useContext(ProductContext)
 
     function getProductDetails(productItems, productId) {
-        
-
         return productItems.find((product) => product._id === productId)
     }
 

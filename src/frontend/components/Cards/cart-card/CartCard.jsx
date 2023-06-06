@@ -15,6 +15,11 @@ export const CartCard = ({ product }) => {
         handleWishlistAddition(item)
         handleCartRemoval(item)
     }
+
+    const handleProceedToCheckout = (item) => {
+      handleCheckoutAddition(item)
+      handleCartRemoval(item)
+    }
     
     return (
       <div className="card pointer flex-se-column mg-s" >
@@ -28,7 +33,7 @@ export const CartCard = ({ product }) => {
               <h6 className="discount">({discount}% Off)</h6>
             </div>
             <button className="btn primary-btn mg-xs" onClick={() => handleMoveToWishlist(product)}>Move to Wishlist</button>
-            <button className="btn primary-btn mg-xs" onClick={() => handleCheckoutAddition(product)}>Proceed to Checkout</button>
+            <button className="btn primary-btn mg-xs" onClick={() => handleProceedToCheckout(product)}>Proceed to Checkout</button>
           </div>
         </div>
       </div>
