@@ -1,3 +1,4 @@
+import '../../Cards/checkout-card/checkout-card.css'
 import { useContext, useState } from "react"
 import { CheckoutContext } from "../../../context/CheckoutContext"
 import { WishlistContext } from "../../../context/WishlistContext"
@@ -44,9 +45,11 @@ export const Checkout = () => {
                   {checkout.map((product) => (
                     <CheckoutCard key={product._id} product={product} quantity={quantityValues[product._id] || 1} onQuantityChange={handleQuantityChange} />
                   ))}
-                  <div className="text-card padding-s" >
-                    <h4>Total Price: Rs {calculateTotalPrice()}</h4> 
-                    <h4>Total Quantity : {calculateTotalQuantity()}</h4>
+                  <div className="text-card flex-center flex-column padding-s" >
+                    <h4>Order Summary</h4>
+                    <p className="m-text mg-t-s">Total Price: Rs {calculateTotalPrice()}</p> 
+                    <p className="m-text mg-t-s">Total Items : {checkout.length}</p>
+                    <p className="m-text mg-t-s">Total Quantity : {calculateTotalQuantity()}</p>
                   </div>  
                 </>
               ) : (
